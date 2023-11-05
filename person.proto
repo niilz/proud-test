@@ -1,4 +1,10 @@
+// Just a comment
+
+syntax = "proto3";
+
 message Person {
-  optional string name = 1;
-  optional string last = 2;
+  string name = 1;
+  optional string role = 2;
+  uint32 age = 3;
+  bool is_coder = 4;
 }
