@@ -6,6 +6,11 @@ fn main() {
     #[derive(ProtoBuf)]
     struct AnyStruct;
 
-    let path = generate_structs!("person.proto");
-    println!("{path}");
+    generate_structs!("person.proto");
+
+    /*
+    let person = Person {
+        name: "Foo".to_string();
+    };
+    */
 }
