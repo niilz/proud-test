@@ -4,12 +4,19 @@ use proud::{generate_structs, ProtoBuf};
 #[derive(ProtoBuf)]
 struct AnyStruct;
 
+#[derive(Debug)]
+struct ProtoField {
+    name: String,
+    typ: String,
+}
+
 #[derive(ProtoBuf)]
 struct PersonRs {
     name: String,
     role: String,
     age: u32,
     is_coder: bool,
+    degree: Option<String>,
 }
 
 fn main() {
@@ -22,8 +29,9 @@ fn main() {
         role: "developer".to_string(),
         age: 40,
         is_coder: true,
+        degree: None,
     };
 
     let proto_buf = person.to_proto();
-    println!("{proto_buf:?}");
+    println!("{proto_buf}");
 }
